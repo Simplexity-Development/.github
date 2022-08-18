@@ -2,7 +2,8 @@
 
 ***The most organized Minecraft Server Devs in the most ironic way.***
 
-[![Ko-Fi Support Link](https://img.shields.io/badge/Rhythmic_Ko--fi-donate-FF5E5B?logo=ko-fi)](https://ko-fi.com/illogicalrhythmic)
+[![Discord](https://img.shields.io/badge/Discord-join-7289DA?logo=discord&logoColor=7289DA&style=flat-square)](https://discord.gg/qe3YQrbegA)
+[![Ko-Fi Support Link](https://img.shields.io/badge/Rhythmic_Ko--fi-donate-FF5E5B?logo=ko-fi&style=flat-square)](https://ko-fi.com/illogicalrhythmic)
 
 > **Note**
 > 
