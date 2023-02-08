@@ -11,7 +11,7 @@ A couple of newcomer Minecraft plugin developers who are just trying to improve 
 > 
 > This is our logo.
 > 
-> <img src="https://github.com/ADHDMC/.github/blob/main/pictures/adhdmc-logo.png?raw=true" width="100" height="100">
+> <img src="https://github.com/ADHDMC/.github/blob/main/pictures/logos/adhdmc-logo.png?raw=true" width="100" height="100">
 
 # Our Projects
 
