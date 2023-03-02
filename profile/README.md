@@ -3,7 +3,7 @@
 ***The most organized Minecraft Server Devs in the most ironic way.***
 
 [![Discord](https://img.shields.io/badge/Discord-join-7289DA?logo=discord&logoColor=7289DA&style=flat-square)](https://discord.gg/qe3YQrbegA)
-[![Ko-Fi Support Link](https://img.shields.io/badge/Rhythmic_Ko--fi-donate-FF5E5B?logo=ko-fi&style=flat-square)](https://ko-fi.com/illogicalrhythmic)
+[![Ko-Fi Support Link](https://img.shields.io/badge/ADHDMC_Development-Ko--fi-FF5E5B?logo=ko-fi&style=flat-square)](https://ko-fi.com/adhdmc_dev)
 
 A couple of newcomer Minecraft plugin developers who are just trying to improve the Quality of Life for the base game and for our own server, while learning programming through it all!
 
