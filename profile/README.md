@@ -30,3 +30,7 @@ Feel free to explore our projects and contribute to make Minecraft even more enj
 Join our Discord community to get in touch with us and stay updated on the latest developments:
 
 [![Discord Server](https://discordapp.com/api/guilds/1004153601402351706/widget.png?style=banner2)](https://discord.gg/qe3YQrbegA)
+
+### Special thanks 
+
+[<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" width="150" height="150" alt="JetBrains Logo (Main) logo.">](https://jb.gg/OpenSourceSupport)
