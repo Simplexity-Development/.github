@@ -1,36 +1,23 @@
-# <img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/organization/simplexity-development-576x576.png" alt="Simplexity Development Logo" height="100"> Simplexity Development
+# Simplexity Development
 
-[![Discord](https://img.shields.io/badge/Discord-join-7289DA?logo=discord&logoColor=white&style=flat-square)](https://discord.gg/qe3YQrbegA)
-[![Ko-Fi Support](https://img.shields.io/badge/Ko--fi-Support-FF5E5B?logo=ko-fi&style=flat-square)](https://ko-fi.com/simple_dev)
+We make projects. Too many projects. 
 
-Welcome to Simplexity Development, where we create Minecraft plugins and tools to enhance gameplay and server experiences. Our team is dedicated to improving the quality of life for Minecraft players and learning programming along the way.
+## Our Projects
 
-## About Us
+These are some of our projects, you can click them to check them out
+<br><br>
+<a href="https://modrinth.com/resourcepack/sus-sand"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/sus_pack_240x240.png" alt="Logo for the 'sus sand' project. It pictures an among-us character inside of sand" height=120></a>
+<a href="https://modrinth.com/resourcepack/high-contrast-extended"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/high_contrast_extended_240x240.png" alt="High contrast extended logo. It pictures a crafting table made with bright blue and dark gray instead of the usual browns" height=120></a>
+<a href="https://modrinth.com/plugin/villager-info"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/villager_info_240x240.png" alt="Villager info logo. It pictures a villager ona blue background with a letter i next to it" height=120></a>
+<br><a href="https://modrinth.com/plugin/scythe"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/scythe_240x240.png" alt="Scythe logo. It pictures a netherite hoe over a bale of hay" height=120></a>
+<a href="https://modrinth.com/plugin/invisible-frames"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/invisible_frames_240x240.png" alt="Invisible Frames logo. It pictures a diamond in an item frame, and then an arrow pointing to a diamond that appears to not be in an item frame" height=120></a>
+<a href="https://modrinth.com/plugin/simplenicks"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_nicks_240x240.png" alt="Simple nicks logo. It pictures the text 'Simple Nicks' rendered over acacia logs." height=120></a>
+<br><a href="https://modrinth.com/plugin/simplepms"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_pms_240x240.png" alt="Simple PMs logo. It pictures the text 'Simple PMs' rendered over bamboo mosaic blocks" height=120></a>
+<a href="https://modrinth.com/plugin/simpleprefixes"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_prefixes_240x240.png" alt="Simple Prefixes logo. It pictures the text 'Simple Prefixes' rendered over bamboo blocks" height=120></a>
+<a href="https://modrinth.com/plugin/simple-chat"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_chat_240x240.png" alt="Simple Chat logo. It pictures the text 'Simple Chat' rendered over bamboo planks" height=120></a>
 
-We are a group of passionate developers who love Minecraft and strive to make it even better. Through our projects, we aim to provide useful and innovative solutions to common challenges faced by players and server administrators.
+## Links
 
-## Projects
-
-Here are some of our notable projects:
-
-| Project | Description | Type | Downloads |
-|---------|-------------|------|-----------|
-| [Scythe](https://github.com/Simplexity-Development/Scythe) | Allow players to automatically replant crops or gather with right-click | Plugin | [![Downloads](https://img.shields.io/modrinth/dt/scythe?color=00AAAA&label=%20Downloads&style=flat-square&logo=modrinth)](https://modrinth.com/plugin/invisible-frames) |
-| [VillagerInfo](https://github.com/Simplexity-Development/VillagerInfo) | Overcome the limitations of Minecraft's `/data` command for getting information from Villagers and perform additional functionalities | Plugin | [![Downloads](https://img.shields.io/modrinth/dt/villager-info?color=00AAAA&label=%20Downloads&style=flat-square&logo=modrinth)](https://modrinth.com/plugin/villagers) |
-| [High Contrast Extended](https://github.com/Simplexity-Development/High_Contrast_Extended) | An extension of the new high contrast pack introduced in recent Minecraft snapshots | Resource Pack | [![Downloads](https://img.shields.io/modrinth/dt/high-contrast-extended?color=00AAAA&label=%20Downloads&style=flat-square&logo=modrinth)](https://modrinth.com/resourcepack/high-contrast-extended) |
-| [InvisibleFrames](https://github.com/Simplexity-Development/InvisibleFrames) | Toggle item frames between invisible and visible in survival mode with ease | Plugin | [![Downloads](https://img.shields.io/modrinth/dt/invisible-frames?color=00AAAA&label=%20Downloads&style=flat-square&logo=modrinth)](https://modrinth.com/plugin/invisible-frames) |
-| Copper Beacons | Allow players to use copper blocks as a beacon base | Datapack | [![Downloads](https://img.shields.io/modrinth/dt/copper-beacons?color=00AAAA&label=%20Downloads&style=flat-square&logo=modrinth)](https://modrinth.com/datapack/copper-beacons) |
-| [Things Need a Tool](https://github.com/Simplexity-Development/Things-need-a-tool) | Provide "proper tools" for blocks that currently don't have them | Datapack | [![Downloads](https://img.shields.io/modrinth/dt/things-need-a-tool?color=00AAAA&label=%20Downloads&style=flat-square&logo=modrinth)](https://modrinth.com/datapack/things-need-a-tool) |
-| [DyableBossBars](https://github.com/Simplexity-Development/DyableBossBars) | Change the color of the Boss Bar to add more visual customization options | Plugin | [![Downloads](https://img.shields.io/modrinth/dt/bossbars?color=00AAAA&label=%20Downloads&style=flat-square&logo=modrinth)](https://modrinth.com/mod/bossbars) |
-
-Feel free to explore our projects and contribute to make Minecraft even more enjoyable!
-
-## Contact Us
-
-Join our Discord community to get in touch with us and stay updated on the latest developments:
-
-[![Discord Server](https://discordapp.com/api/guilds/1004153601402351706/widget.png?style=banner2)](https://discord.gg/qe3YQrbegA)
-
-### Special thanks 
-
-[<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" width="150" height="150" alt="JetBrains Logo (Main) logo.">](https://jb.gg/OpenSourceSupport)
+<a href="https://discord.gg/qe3YQrbegA"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/discord-assets/discord_240x240.png" alt="Discord logo in a pixel-art style" height=64></a>
+<a href="https://ko-fi.com/simple_dev"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/discord-assets/kofi_240x240.png" alt="Ko-Fi logo in a pixel-art style" height=64></a>
+<a href="https://modrinth.com/organization/simplexity"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/discord-assets/modrinth_button_240x240.png" alt="Modrinth logo in a pixel-art style" height=64></a>
