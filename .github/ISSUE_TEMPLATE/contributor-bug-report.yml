@@ -1,4 +1,4 @@
-name: Technical Issue / Code-Level Report
+name: Technical Issue / Code-Level Report (Contributor)
 description: For contributors and maintainers to report deeper technical issues.
 labels: ["dev", "internal"]
 body:
