@@ -1,0 +1,63 @@
+name: Technical Issue / Code-Level Report
+description: For contributors and maintainers to report deeper technical issues.
+labels: ["dev", "internal"]
+body:
+  - type: input
+    id: found-while
+    attributes:
+      label: Found While
+      placeholder: Code Reviewing, Debugging, Refactoring, etc.
+
+  - type: input
+    id: found-by
+    attributes:
+      label: Found By
+      placeholder: @YourNameHere
+
+  - type: input
+    id: affected-dev
+    attributes:
+      label: Developer (If applicable)
+      placeholder: @ContributorName
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Summary
+      description: Short description of the issue at a technical level.
+      placeholder: What’s the underlying problem? Why does it matter?
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional Notes / Context
+      description: Include any context such as related files, PRs, comments, or Minecraft mechanics involved.
+      placeholder: Code paths, events, signing issues, performance concerns, etc.
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Proposed Direction / Suggested Fix
+      description: Optional ideas about how this could be resolved.
+
+  - type: input
+    id: related
+    attributes:
+      label: Related Issue / PR
+      placeholder: #123 or link to comment
+
+  - type: checkboxes
+    id: classification
+    attributes:
+      label: Classification
+      options:
+        - label: Architecture / Design Issue
+        - label: Implementation Bug
+        - label: Missing Feature
+        - label: API Misuse
+        - label: Minecraft Version Change / Behavior Change
+        - label: Bad Code
+        - label: Syntax Issues
+        - label: Naming Conventions

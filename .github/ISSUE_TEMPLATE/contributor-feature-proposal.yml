@@ -1,0 +1,62 @@
+name: Feature Proposal (Contributors)
+description: Propose a feature with technical context and design considerations.
+labels: ["enhancement", "dev"]
+body:
+  - type: input
+    id: found-by
+    attributes:
+      label: Proposed By
+      placeholder: @YourNameHere
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A brief explanation of the feature.
+      placeholder: High-level description of the proposed feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Use Case
+      description: What problem does this feature solve, and why does it matter?
+      placeholder: Describe the underlying issue or missing functionality.
+
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed Implementation / Design Ideas
+      description: Describe your approach. Include APIs, events, components, or systems that need to change.
+      placeholder: Explain how you imagine this being implemented, even if rough.
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope & Affected Components
+      description: Which subsystems, files, gameplay behaviors, or Minecraft features are involved?
+      placeholder: Commands, listeners, configs, SQL, datapacks, components, etc.
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / Compatibility Notes
+      description: Optional but helpful — version differences, API quirks, edge cases.
+      placeholder: i.e. “This may break on 1.21.5 due to data component changes.”
+
+  - type: input
+    id: related
+    attributes:
+      label: Related Issues / PRs
+      placeholder: #123 or link to discussion
+
+  - type: checkboxes
+    id: classification
+    attributes:
+      label: Classification
+      options:
+        - label: New Feature
+        - label: Enhancement to Existing Feature
+        - label: Refactor or Redesign
+        - label: Technical Feasibility Discussion
