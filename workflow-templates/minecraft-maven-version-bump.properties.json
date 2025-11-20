@@ -1,0 +1,5 @@
+{
+  "name": "Minecraft Maven Version Check",
+  "description": "Blocks PR merges if the Maven project version has not been bumped and warns on -SNAPSHOT.",
+  "iconName": "octicon repo-push"
+}
