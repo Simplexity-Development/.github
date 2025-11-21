@@ -1,23 +1,39 @@
 # Simplexity Development
 
-We make projects. Too many projects. 
+Hullo! We are Simplexity, a small dev team that makes stuff 'cause it's fun.
 
-## Our Projects
+## What We Make
 
-These are some of our projects, you can click them to check them out
-<br><br>
-<a href="https://modrinth.com/resourcepack/sus-sand"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/sus_pack_240x240.png" alt="Logo for the 'sus sand' project. It pictures an among-us character inside of sand" height=120></a>
-<a href="https://modrinth.com/resourcepack/high-contrast-extended"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/high_contrast_extended_240x240.png" alt="High contrast extended logo. It pictures a crafting table made with bright blue and dark gray instead of the usual browns" height=120></a>
-<a href="https://modrinth.com/plugin/villager-info"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/villager_info_240x240.png" alt="Villager info logo. It pictures a villager ona blue background with a letter i next to it" height=120></a>
-<br><a href="https://modrinth.com/plugin/scythe"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/scythe_240x240.png" alt="Scythe logo. It pictures a netherite hoe over a bale of hay" height=120></a>
-<a href="https://modrinth.com/plugin/invisible-frames"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/invisible_frames_240x240.png" alt="Invisible Frames logo. It pictures a diamond in an item frame, and then an arrow pointing to a diamond that appears to not be in an item frame" height=120></a>
-<a href="https://modrinth.com/plugin/simplenicks"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_nicks_240x240.png" alt="Simple nicks logo. It pictures the text 'Simple Nicks' rendered over acacia logs." height=120></a>
-<br><a href="https://modrinth.com/plugin/simplepms"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_pms_240x240.png" alt="Simple PMs logo. It pictures the text 'Simple PMs' rendered over bamboo mosaic blocks" height=120></a>
-<a href="https://modrinth.com/plugin/simpleprefixes"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_prefixes_240x240.png" alt="Simple Prefixes logo. It pictures the text 'Simple Prefixes' rendered over bamboo blocks" height=120></a>
-<a href="https://modrinth.com/plugin/simple-chat"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/logos/2024_logo_versions/240x240_files/simple_chat_240x240.png" alt="Simple Chat logo. It pictures the text 'Simple Chat' rendered over bamboo planks" height=120></a>
+Our projects fall into a few broad categories:
 
-## Links
+### Minecraft Plugins
 
-<a href="https://discord.gg/qe3YQrbegA"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/discord-assets/discord_240x240.png" alt="Discord logo in a pixel-art style" height=64></a>
-<a href="https://ko-fi.com/simple_dev"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/discord-assets/kofi_240x240.png" alt="Ko-Fi logo in a pixel-art style" height=64></a>
-<a href="https://modrinth.com/organization/simplexity"><img src="https://raw.githubusercontent.com/Simplexity-Development/.github/main/organization_resources/assets/discord-assets/modrinth_button_240x240.png" alt="Modrinth logo in a pixel-art style" height=64></a>
+Most of our plugins are plugins that kinda 'Do one thing' - this is because we were annoyed with having an entire server's functionality broken by a single plugin being non-functional or not updated. Some of these projects are:
+
+- **[SimpleNicks](https://github.com/Simplexity-Development/SimpleNicks)** - Nickname plugin that supports MiniMessage and allows you to save nickname presets
+- **[SimplePMs](https://github.com/Simplexity-Development/SimplePMs)** - Easy private messaging, with social spy
+- **[SimplePrefixes](https://github.com/Simplexity-Development/SimplePrefixes)** - Player selectable customizable prefixes.
+- **[SimpleChat](https://github.com/Simplexity-Development/SimpleChat)** - Simple customizable permission-based chat formatting
+- **[VillagerInfo](https://github.com/Simplexity-Development/VillagerInfo)** - Shows the info about Villagers that is usually hidden behind the `/data get` command
+- **[Scythe](https://github.com/Simplexity-Development/Scythe)** - Allows right-click harvest and auto-replant
+- **[InvisibleFrames](https://github.com/Simplexity-Development/InvisibleFrames)** - Allows easy toggling of item frames to be invisible
+
+## What We Care About
+
+### Open Source First
+
+Everything we can open-source, we do. The suggestions and contributions from other people have made our projects far better, and we value that a lot.
+
+### Simple to Use
+
+When creating a project, our goals are to make it easy to use, configure, and manage on the user-end. This can take quite a lot of additional planning and testing.
+
+### Respect, Patience, and Good Vibes
+
+Our [Code of Conduct](https://github.com/Simplexity-Development/.github/blob/main/CODE_OF_CONDUCT.md) is built around being decent to each other.
+We don't tolerate harassment, bigotry, or starting drama
+
+
+## Thanks for Stopping By ❤️
+
+If you like what we do, star a repo, leave feedback, or hop into the Discord and say hi.
