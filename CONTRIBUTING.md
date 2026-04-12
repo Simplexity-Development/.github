@@ -30,6 +30,7 @@ Before contributing, please read the [Code of Conduct](https://github.com/Simple
    5. [Error Handling](#error-handling)
    6. [SQL](#sql)
    7. [Minecraft-Specific](#minecraft-specific)
+   8. [Code Mechanics](#code-mechanics)
 6. [Code Review](#code-review)
 7. [Testing](#testing)
 
@@ -207,6 +208,186 @@ String upsert = isMySql
 - **Messages:** All player-facing strings must live in `locale.yml` and be accessed through a `LocaleMessage` enum or equivalent. No hardcoded strings.
 - **Permissions:** Define permissions in an enum and register them programmatically in `onEnable`. Treat the enum as the source of truth; keep `plugin.yml` in sync.
 - **Third-party hooks:** Check availability before registering (`Bukkit.getPluginManager().isPluginEnabled(...)`). All third-party integrations are `softdepend`, never `depend`.
+
+### Code Mechanics
+
+This section covers low-level style decisions: how to declare variables, write conditions, use lambdas, and avoid patterns that obscure intent.
+
+#### Variables
+
+- Declare variables as close to their first use as possible.
+- Extract values from method chains into named local variables before using them in a condition, or before using them more than once. This applies especially to config lookups, permission checks, and UUID resolution.
+- Boolean flags that guard a block of logic should be extracted and named before the `if` — not inlined into the condition.
+
+```java
+// Prefer this: intent is visible at the call site
+boolean bypassLength = sender.hasPermission(NickPermission.NICK_BYPASS_LENGTH.getPermission());
+if (!bypassLength && normalizedNick.length() > ConfigHandler.getInstance().getMaxLength()) { ... }
+
+// Over this: requires the reader to parse a permission string mid-condition
+if (!sender.hasPermission(NickPermission.NICK_BYPASS_LENGTH.getPermission()) && ...) { ... }
+```
+
+- Use `final` on local variables that are never reassigned after declaration. It signals intent and prevents accidental re-use.
+
+#### Magic Numbers and Strings
+
+- Any literal number or string that carries semantic meaning must be a named constant. Bare literals in logic are not acceptable.
+- Constants local to a class go in `private static final` fields at the top of the class. Constants meaningful across classes belong in an enum or dedicated utility.
+- Numeric sentinel values (e.g. `-1` meaning "no limit") must be documented at the constant definition and at every method `@param` that accepts them.
+- SQL query strings should be extracted to a named local variable at the top of the method. Never repeat or concatenate query strings inline.
+
+```java
+// Good: named constant, meaning is clear
+private static final int SCHEMA_VERSION = 1;
+private static final int COMMIT_THRESHOLD = 500;
+
+if (batchCount >= COMMIT_THRESHOLD) { ... }
+
+// Bad: reader must guess what 500 represents
+if (batchCount >= 500) { ... }
+```
+
+#### Conditionals and Braces
+
+- **Always use braces** on `if`, `else`, and loop bodies — no exceptions, including single-statement guard clauses.
+- Use guard clauses (early returns or early throws) to reduce nesting. Do not wrap the main body of a method in an `if` when a guard at the top accomplishes the same thing.
+- When a nested `if` and its outer `if` can be merged with `&&` without losing clarity, merge them. A double-nested `if` whose outer block contains only the inner `if` is always a candidate for flattening.
+
+```java
+// Prefer this: flat, readable
+if (!bypassUsername && ConfigHandler.getInstance().isUsernameProtection() && isProtectedUsername(normalizedNick)) {
+    throw Exceptions.ERROR_NICKNAME_IS_SOMEONES_USERNAME.create(normalizedNick);
+}
+
+// Over this: unnecessary nesting
+if (!bypassUsername) {
+    if (ConfigHandler.getInstance().isUsernameProtection() && isProtectedUsername(normalizedNick))
+        throw Exceptions.ERROR_NICKNAME_IS_SOMEONES_USERNAME.create(normalizedNick);
+}
+```
+
+- When multiple checks at the top of a method all lead to an early return or throw, invert each condition and return immediately rather than nesting them. Each guard clause should be its own `if` block — do not chain successful conditions into a nested success path.
+
+```java
+// Prefer this: each failing condition exits immediately, main logic stays flat
+public boolean deleteSavedNickname(@NotNull UUID uuid, @NotNull String nickname) {
+    boolean sqlDeleted = SqlHandler.getInstance().deleteNickname(uuid, nickname);
+    if (!sqlDeleted) {
+        return false;
+    }
+    if (!savedNicknames.containsKey(uuid)) {
+        return false;
+    }
+    // main logic at the top level
+    savedNicknames.get(uuid).removeIf(name -> name.getNickname().equals(nickname));
+    return true;
+}
+
+// Over this: nesting successful conditions pushes the main logic further right
+public boolean deleteSavedNickname(@NotNull UUID uuid, @NotNull String nickname) {
+    boolean sqlDeleted = SqlHandler.getInstance().deleteNickname(uuid, nickname);
+    if (sqlDeleted) {
+        if (savedNicknames.containsKey(uuid)) {
+            // main logic buried under two levels of nesting
+            savedNicknames.get(uuid).removeIf(name -> name.getNickname().equals(nickname));
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+- Use ternary expressions for simple conditional assignments — one condition, one value on each branch, no nesting.
+
+```java
+// Acceptable: simple, symmetric
+String upsert = isMySql
+    ? "INSERT INTO ... ON DUPLICATE KEY UPDATE ..."
+    : "INSERT INTO ... ON CONFLICT(...) DO UPDATE SET ...";
+```
+
+#### instanceof Pattern Matching
+
+- Use Java's `instanceof` pattern matching everywhere a type check is immediately followed by a cast. Never cast manually after an `instanceof` check.
+- For early-return guards, prefer the negated form to keep the happy path un-nested.
+
+```java
+// Prefer this: guard at the top, happy path stays flat
+if (!(css.getSender() instanceof Player player)) return false;
+
+// Over this: happy path is buried inside the block
+if (css.getSender() instanceof Player player) {
+    // ... rest of method indented one level unnecessarily
+}
+
+// Never do this: manual cast after instanceof check
+if (sender instanceof Player) {
+    UUID uuid = ((Player) sender).getUniqueId(); // redundant cast
+}
+```
+
+#### Lambdas and Method References
+
+- Prefer method references over lambdas when the body is a single method call with no transformation: `this::canExecute`, `argument::suggestOwnNicknames`.
+- Use a block lambda (braces + explicit body) when the body has more than one statement or contains its own control flow.
+- Do not nest lambdas more than one level deep. Extract inner logic to a named private method with a descriptive name.
+- Never capture mutable state inside a lambda passed to an async scheduler. All captured variables must be effectively final.
+
+```java
+// Prefer method references when the body is a single delegating call
+parent.then(Commands.literal("set")
+        .requires(this::canExecute)
+        .then(Commands.argument("nickname", argument)
+                .suggests(argument::suggestOwnNicknames)
+                .executes(this::execute)));
+
+// Over an explicit lambda that just forwards to the same method
+parent.then(Commands.literal("set")
+        .requires(css -> canExecute(css))
+        .then(Commands.argument("nickname", argument)
+                .suggests((ctx, builder) -> argument.suggestOwnNicknames(ctx, builder))
+                .executes(ctx -> execute(ctx))));
+```
+
+```java
+// Single method call with no transformation → expression lambda (or method reference)
+Bukkit.getScheduler().runTask(plugin, () -> NickUtils.refreshDisplayName(player.getUniqueId()));
+
+// Multiple statements or control flow → block lambda
+Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+    boolean success = NicknameProcessor.getInstance().resetNickname(player);
+    if (success) {
+        Bukkit.getScheduler().runTask(plugin, () -> NickUtils.refreshDisplayName(player.getUniqueId()));
+    } else {
+        sendFeedback(player, LocaleMessage.ERROR_RESET_FAILURE, null);
+    }
+});
+```
+
+#### Collections and Map Access
+
+- When iterating a `Map` and you need both the key and the value, iterate `entrySet()`. Do not iterate `keySet()` and then call `get()` inside the loop — that is two lookups where one suffices.
+- Prefer `Map.getOrDefault()` over a `containsKey()` check followed by a separate `get()`.
+- For `List` removal by predicate, use `removeIf()` rather than iterating manually and calling `remove()`.
+
+```java
+// Prefer this: single lookup
+for (Map.Entry<UUID, Nickname> entry : activeNicknames.entrySet()) {
+    if (entry.getValue().getNormalizedNickname().equalsIgnoreCase(normalizedNick)) { ... }
+}
+
+// Over this: double lookup
+for (UUID playerUuid : activeNicknames.keySet()) {
+    if (activeNicknames.get(playerUuid).getNormalizedNickname().equalsIgnoreCase(normalizedNick)) { ... }
+}
+```
+
+#### Method Length and Scope
+
+- If a method body spans more than roughly 30 lines, look for a natural decomposition into private helper methods with descriptive names. A long method is usually doing more than one thing.
+- Extract logic that will be called from inside a lambda into a named private method rather than writing it inline. This keeps lambda bodies short and gives the extracted logic a searchable name.
+- Scope `@SuppressWarnings` to the smallest element possible — prefer annotating a single method over an entire class. Always leave a brief comment explaining why the suppression is justified if it is not immediately obvious from context.
 
 ---
 
